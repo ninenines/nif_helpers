@@ -1,0 +1,9 @@
+= NIF helpers
+
+An Erlang.mk plugin and C library for writing NIFs.
+
+== Getting help
+
+* Official IRC Channel: #ninenines on irc.freenode.net
+* https://github.com/ninenines/nif_helpers/issues[Issues tracker]
+* http://ninenines.eu/services[Commercial Support]
