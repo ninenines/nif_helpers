@@ -89,6 +89,7 @@
 		\
 		return 1; \
 	}
+#define NIF_LIST_TO_FLAGS_FUNCTION_DECL(f, type) int f(ErlNifEnv*, ERL_NIF_TERM, type*);
 
 #define NIF_FLAG_CONS_LIST(a, f) if (flags & f) list = enif_make_list_cell(env, atom_ ## a, list);
 #define NIF_FLAGS_TO_LIST_FUNCTION(f, type, flags_list) \
@@ -98,6 +99,7 @@
 		flags_list(NIF_FLAG_CONS_LIST); \
 		return list; \
 	}
+#define NIF_FLAGS_TO_LIST_FUNCTION_DECL(f, type) ERL_NIF_TERM f(ErlNifEnv*, type);
 
 #define NIF_ATOM_TO_ENUM(a, e) if (enif_is_identical(atom_ ## a, atom)) { *val = e; return 1; }
 #define NIF_ATOM_TO_ENUM_FUNCTION(f, type, enum_list) \
