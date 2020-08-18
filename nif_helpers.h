@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2015, Loïc Hoguin <essen@ninenines.eu>
+// Copyright (c) 2014-2020, Loïc Hoguin <essen@ninenines.eu>
 //
 // Permission to use, copy, modify, and/or distribute this software for any
 // purpose with or without fee is hereby granted, provided that the above
@@ -101,6 +101,7 @@
 	}
 #define NIF_FLAGS_TO_LIST_FUNCTION_DECL(f, type) ERL_NIF_TERM f(ErlNifEnv*, type);
 
+// @todo Not sure why we have the env here. Doesn't seem necessary.
 #define NIF_ATOM_TO_ENUM(a, e) if (enif_is_identical(atom_ ## a, atom)) { *val = e; return 1; }
 #define NIF_ATOM_TO_ENUM_FUNCTION(f, type, enum_list) \
 	int f(ErlNifEnv* env, ERL_NIF_TERM atom, type* val) \
