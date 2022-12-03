@@ -8,3 +8,9 @@ CFLAGS += -I"$(THIS)/compat/"
 endif
 
 CFLAGS += -I"$(THIS)"
+ifneq (, $(shell which uname))
+  UNAME_A := $(shell uname -a)
+  ifneq ($(filter Darwin%, $(UNAME_A)),)
+    CFLAGS += -Wno-implicit-function-declaration
+  endif
+endif
