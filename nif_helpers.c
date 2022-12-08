@@ -159,6 +159,11 @@ static void* nif_main_thread(void* obj)
 
 // Main thread creation/destruction.
 
+#if defined(__APPLE__) && defined(__MACH__)
+// The XCode compiler requires us to declare this function before we can use it.
+int erl_drv_steal_main_thread(char*, ErlNifTid*, void* (*)(void*), void*, ErlDrvThreadOpts*);
+#endif
+
 void* nif_create_main_thread(char* name)
 {
 	nif_thread_state* st = (nif_thread_state*)enif_alloc(sizeof(nif_thread_state));
