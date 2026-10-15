@@ -4,6 +4,6 @@ An Erlang.mk plugin and C library for writing NIFs.
 
 == Getting help
 
-* Official IRC Channel: #ninenines on irc.freenode.net
+* https://discord.gg/x25nNq2fFE[Discord server]
 * https://github.com/ninenines/nif_helpers/issues[Issues tracker]
-* http://ninenines.eu/services[Commercial Support]
+* https://github.com/sponsors/essen[Sponsor me!]
